@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Credit Scoring Model</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>Credit Scoring Model</h1>
+
+            <p>
+                Predict creditworthiness using financial
+                and credit history information.
+            </p>
+
+        </div>
+
+
+        <form id="creditForm">
+
+
+            <!-- -------------------------------- -->
+            <!-- CREDIT INFORMATION -->
+            <!-- -------------------------------- -->
+
+            <div class="section">
+
+                <h2>Credit Information</h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Credit Balance
+                        </label>
+
+                        <select
+                            id="Cbal"
+                            required
+                        >
+                            <option value="">
+                                Select Credit Balance
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Credit Duration
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Cdur"
+                            min="1"
+                            required
+                            placeholder="Example: 12"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Credit History
+                        </label>
+
+                        <select
+                            id="Chist"
+                            required
+                        >
+                            <option value="">
+                                Select Credit History
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Credit Purpose
+                        </label>
+
+                        <select
+                            id="Cpur"
+                            required
+                        >
+                            <option value="">
+                                Select Purpose
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Credit Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Camt"
+                            min="1"
+                            required
+                            placeholder="Example: 5000"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Savings Balance
+                        </label>
+
+                        <select
+                            id="Sbal"
+                            required
+                        >
+                            <option value="">
+                                Select Savings Balance
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Employment Duration
+                        </label>
+
+                        <select
+                            id="Edur"
+                            required
+                        >
+                            <option value="">
+                                Select Employment Duration
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Interest Rate
+                        </label>
+
+                        <input
+                            type="number"
+                            id="InRate"
+                            min="0"
+                            required
+                            placeholder="Example: 4"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- -------------------------------- -->
+            <!-- PERSONAL INFORMATION -->
+            <!-- -------------------------------- -->
+
+            <div class="section">
+
+                <h2>Personal Information</h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            min="18"
+                            required
+                            placeholder="Example: 30"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Number of Credits
+                        </label>
+
+                        <input
+                            type="number"
+                            id="NumCred"
+                            min="0"
+                            required
+                            placeholder="Example: 2"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Number of Dependents
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Ndepend"
+                            min="0"
+                            required
+                            placeholder="Example: 1"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Job Type
+                        </label>
+
+                        <select
+                            id="JobType"
+                            required
+                        >
+                            <option value="">
+                                Select Job Type
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Telephone
+                        </label>
+
+                        <select
+                            id="telephone"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Foreign Worker
+                        </label>
+
+                        <select
+                            id="foreign"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- -------------------------------- -->
+            <!-- ADDITIONAL INFORMATION -->
+            <!-- -------------------------------- -->
+
+            <div class="section">
+
+                <h2>Additional Credit Details</h2>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Marital / Social Status
+                        </label>
+
+                        <select
+                            id="MSG"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Other Parties
+                        </label>
+
+                        <select
+                            id="Oparties"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Residence Duration
+                        </label>
+
+                        <select
+                            id="Rdur"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Property
+                        </label>
+
+                        <select
+                            id="Prop"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Existing Installment Plans
+                        </label>
+
+                        <select
+                            id="inPlans"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Housing Type
+                        </label>
+
+                        <select
+                            id="Htype"
+                            required
+                        >
+                            <option value="">
+                                Select
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- -------------------------------- -->
+            <!-- BUTTON -->
+            <!-- -------------------------------- -->
+
+            <button
+                type="submit"
+                id="predictButton"
+            >
+                Check Creditworthiness
+            </button>
+
+
+        </form>
+
+
+        <!-- -------------------------------- -->
+        <!-- LOADING -->
+        <!-- -------------------------------- -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            Analyzing credit information...
+        </div>
+
+
+        <!-- -------------------------------- -->
+        <!-- RESULT -->
+        <!-- -------------------------------- -->
+
+        <div
+            id="result"
+            class="result hidden"
+        >
+
+            <h2>Credit Assessment Result</h2>
+
+            <div
+                id="prediction"
+                class="prediction"
+            >
+            </div>
+
+
+            <div class="probability-container">
+
+                <div class="probability-box">
+
+                    <span>
+                        Good Credit Probability
+                    </span>
+
+                    <strong id="goodProbability">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="probability-box">
+
+                    <span>
+                        Bad Credit Probability
+                    </span>
+
+                    <strong id="badProbability">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- -------------------------------- -->
+        <!-- ERROR -->
+        <!-- -------------------------------- -->
+
+        <div
+            id="error"
+            class="error hidden"
+        >
+        </div>
+
+
+        <div class="footer">
+
+            <p>
+                Machine Learning Credit Scoring Model
+            </p>
+
+            <p>
+                Logistic Regression • Decision Tree • Random Forest
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

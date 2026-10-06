@@ -1,0 +1,672 @@
+/* =========================================================
+   CREDIT SCORING MODEL
+   LIGHT COLORFUL COMPACT UI
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #3b82f6;
+    --blue-dark: #2563eb;
+    --blue-light: #e0f2fe;
+
+    --purple: #8b5cf6;
+    --purple-light: #ede9fe;
+
+    --cyan: #06b6d4;
+    --cyan-light: #cffafe;
+
+    --green: #22c55e;
+    --green-light: #dcfce7;
+
+    --red: #ef4444;
+    --red-light: #fee2e2;
+
+    --pink: #ec4899;
+    --pink-light: #fce7f3;
+
+    --yellow: #f59e0b;
+    --yellow-light: #fef3c7;
+
+    --text: #1e293b;
+    --muted: #64748b;
+
+    --white: #ffffff;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe 0%,
+            #ede9fe 35%,
+            #cffafe 70%,
+            #dcfce7 100%
+        );
+
+    background-attachment: fixed;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: 94%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 28px 0 35px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 800;
+
+    color: #3730a3;
+
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #475569;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   The form itself becomes a 2-column layout.
+*/
+
+#creditForm {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(71, 85, 105, 0.14);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 20px;
+
+    border-radius: 16px;
+
+    border: 1px solid;
+}
+
+
+/* Credit Information */
+
+.section:nth-child(1) {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+}
+
+
+/* Personal Information */
+
+.section:nth-child(2) {
+    background: #f5f3ff;
+
+    border-color: #ddd6fe;
+}
+
+
+/* Additional Credit Details */
+
+.section:nth-child(3) {
+    /*
+       This section occupies the complete width.
+    */
+
+    grid-column: 1 / -1;
+
+    background: #ecfeff;
+
+    border-color: #a5f3fc;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.section h2 {
+    font-size: 1.15rem;
+
+    font-weight: 800;
+
+    color: #334155;
+
+    margin-bottom: 16px;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-left: 5px solid var(--blue);
+}
+
+
+/* Personal heading */
+
+.section:nth-child(2) h2 {
+    border-left-color: var(--purple);
+}
+
+
+/* Additional heading */
+
+.section:nth-child(3) h2 {
+    border-left-color: var(--cyan);
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px 16px;
+}
+
+
+/*
+   Additional Credit Details
+   gets 3 columns
+*/
+
+.section:nth-child(3) .form-grid {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #475569;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   INPUTS / SELECTS
+   ========================================================= */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 43px;
+
+    padding: 0 11px;
+
+    border-radius: 9px;
+
+    border: 1.5px solid #cbd5e1;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 0.88rem;
+
+    outline: none;
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   COLORFUL INPUT BACKGROUNDS
+   ========================================================= */
+
+.form-group:nth-child(4n + 1) input,
+.form-group:nth-child(4n + 1) select {
+    background: #f8fbff;
+
+    border-color: #bfdbfe;
+}
+
+.form-group:nth-child(4n + 2) input,
+.form-group:nth-child(4n + 2) select {
+    background: #faf8ff;
+
+    border-color: #ddd6fe;
+}
+
+.form-group:nth-child(4n + 3) input,
+.form-group:nth-child(4n + 3) select {
+    background: #f5feff;
+
+    border-color: #a5f3fc;
+}
+
+.form-group:nth-child(4n) input,
+.form-group:nth-child(4n) select {
+    background: #fff8fc;
+
+    border-color: #fbcfe8;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.form-group input:hover,
+.form-group select:hover {
+    background: #ffffff;
+
+    border-color: #93c5fd;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.form-group input:focus,
+.form-group select:focus {
+    background: #ffffff;
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.13);
+}
+
+
+/* =========================================================
+   PREDICTION BUTTON
+   ========================================================= */
+
+#predictButton {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #db2777
+        );
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.25);
+
+    transition: all 0.2s ease;
+}
+
+#predictButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(99, 102, 241, 0.32);
+}
+
+#predictButton:active {
+    transform: translateY(0);
+}
+
+#predictButton:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+    text-align: center;
+
+    margin: 18px 0;
+
+    color: #6366f1;
+
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.result {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 2px solid #e2e8f0;
+
+    box-shadow:
+        0 15px 35px rgba(71, 85, 105, 0.10);
+
+    animation: resultAppear 0.4s ease;
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+.result h2 {
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   PREDICTION
+   ========================================================= */
+
+.prediction {
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   PROBABILITY
+   ========================================================= */
+
+.probability-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.probability-box {
+    padding: 18px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    border: 2px solid;
+}
+
+.probability-box:first-child {
+    background: var(--green-light);
+
+    border-color: #bbf7d0;
+}
+
+.probability-box:last-child {
+    background: var(--pink-light);
+
+    border-color: #fbcfe8;
+}
+
+.probability-box span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 0.85rem;
+
+    margin-bottom: 5px;
+}
+
+.probability-box strong {
+    font-size: 1.5rem;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error {
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: var(--red-light);
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+
+    text-align: center;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #64748b;
+
+    font-size: 0.82rem;
+}
+
+.footer p {
+    margin: 3px 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    #creditForm {
+        grid-template-columns: 1fr;
+    }
+
+    .section:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .section:nth-child(3) .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        padding: 20px 0 30px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 0.85rem;
+    }
+
+    #creditForm {
+        padding: 14px;
+
+        gap: 14px;
+
+        border-radius: 16px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .form-grid,
+    .section:nth-child(3) .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 44px;
+    }
+
+    #predictButton {
+        height: 50px;
+    }
+
+    .probability-container {
+        grid-template-columns: 1fr;
+    }
+}
